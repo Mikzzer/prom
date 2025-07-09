@@ -1,7 +1,7 @@
 FROM openjdk:11 AS build_image
 RUN apt update && apt install -y maven git
 RUN git clone https://github.com/Mikzzer/prom.git
-RUN cd prom && git checkout docker && mvn install
+RUN cd prom && mvn install
 
 FROM tomcat:9-jre11
 
